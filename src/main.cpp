@@ -6,8 +6,6 @@ void setup_axis(SDL_Renderer *rend){
     SDL_RenderDrawLine(rend, 0, 200, 640, 200);
     SDL_SetRenderDrawColor(rend, 0, 0, 0, 100);
     SDL_RenderPresent(rend);
-    
-    
 }
 
 void event_handling(SDL_Event e, SDL_bool *quit){
@@ -40,6 +38,7 @@ int main(int argc, char *argv[]){
     SDL_Window *window = NULL;
     SDL_Renderer *renderer = NULL;
     PolyNomialSolver psolve(argc, argv);
+    SDL_bool quit = SDL_FALSE;
 
 
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
@@ -47,18 +46,16 @@ int main(int argc, char *argv[]){
         return -1;
     }
 
-    window = SDL_CreateWindow("Hello", 0, 0, 640, 480,SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
+    window = SDL_CreateWindow("Hello", 0, 0, 640, 480, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
+
+
     
-    renderer = SDL_CreateRenderer(window, -1, 0);
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
     if (renderer == NULL){
         SDL_Log("Failed to create renderer: %s", SDL_GetError());
         return -1;
     }
 
-    SDL_bool quit = SDL_FALSE;
-
-
-    
     while (!quit){
         SDL_Event e;
 
@@ -72,6 +69,5 @@ int main(int argc, char *argv[]){
 
     SDL_Quit();
     return 1;
-    
 
 }
