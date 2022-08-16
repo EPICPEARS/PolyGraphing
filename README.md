@@ -31,7 +31,7 @@ The command to graph ```y = f(x)``` is:
 
 Example 2:
 ```
-g(x) = x^3 -3*x^2 -x +3
+g(x) = x<sup>3</sup> -3x<sup>2</sup> -x +3
 ```
 
 The command to graph ```y = g(x)``` is;
