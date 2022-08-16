@@ -1,14 +1,17 @@
 #include <main.hpp>
 
 
-SDL_Window *window = NULL;
-SDL_Renderer *renderer = NULL;
+
 
 int main(int argc, char *argv[]){
     
     if (argc <= 2){
         return 1;
     }
+
+    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
+    SDL_Window *window = NULL;
+    SDL_Renderer *renderer = NULL;
 
 
     PolyNomialSolver psolve(argc, argv);
@@ -20,7 +23,7 @@ int main(int argc, char *argv[]){
         return -1;
     }
     window = SDL_CreateWindow("Hello", 0, 0, 640, 480,SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
-    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
+    
     renderer = SDL_CreateRenderer(window, -1, 0);
     if (renderer == NULL){
         SDL_Log("Failed to create renderer: %s", SDL_GetError());
