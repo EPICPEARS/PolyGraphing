@@ -20,7 +20,7 @@ Example 1:
 
 For the polynomial in standard form:
 ```
-f(x) = x^2 -6x -16
+f(x) = x^2 - 6x - 16
 ```
 
 The command to graph ```y = f(x)``` is:
@@ -31,10 +31,10 @@ The command to graph ```y = f(x)``` is:
 
 Example 2:
 ```
-g(x) = x<sup>3</sup> -3x<sup>2</sup> -x +3
+g(x) = x^3 - 3x^2 - x + 3
 ```
 
-The command to graph ```y = g(x)``` is;
+The command to graph ```y = g(x)``` is:
 
 ```
 ./bin/out 3 1 -3 -1 3
