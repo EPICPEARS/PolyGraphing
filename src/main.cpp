@@ -1,11 +1,12 @@
 #include <main.hpp>
 
 void setup_axis(SDL_Renderer *rend){
+    SDL_SetRenderDrawColor(rend, 255, 255, 255, 100);
     SDL_RenderDrawLine(rend, 300, 0, 300, 480);
     SDL_RenderDrawLine(rend, 0, 200, 640, 200);
     SDL_SetRenderDrawColor(rend, 0, 0, 0, 100);
     SDL_RenderPresent(rend);
-    SDL_SetRenderDrawColor(rend, 255, 255, 255, 100);
+    
     
 }
 
